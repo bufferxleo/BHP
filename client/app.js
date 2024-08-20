@@ -29,7 +29,7 @@ function onClickedEstimatePrice() {
   var estPrice = document.getElementById("uiEstimatedPrice");
 
   $.post(
-    `${apiUrl}/predict_home_price`,
+    `${apiUrl}predict_home_price`,
     {
       total_sqft: parseFloat(sqft),
       bhk: bhk,
@@ -47,7 +47,7 @@ function onClickedEstimatePrice() {
 
 function onPageLoad() {
   console.log("document loaded");
-  $.get(`${apiUrl}/get_location_names`, function (data, status) {
+  $.get(`${apiUrl}get_location_names`, function (data, status) {
     console.log("got response for get_location_names request");
     var locations = data.location;
     $("#uiLocations").empty();
